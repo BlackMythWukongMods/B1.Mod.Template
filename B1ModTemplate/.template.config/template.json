@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "lxy",
+  "classifications": [
+    "Black Myth Wukong",
+    "Mod",
+    "Library"
+  ],
+  "identity": "B1.Mod.CSharp.Windows",
+  "name": "BlackMythWukong Mod",
+  "shortName": "b1mod",
+  "tags": {
+    "language": "C#",
+    "type": "project",
+    "platform": "Windows"
+  },
+  "sourceName": "B1ModTemplate",
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "exclude": [
+        ".idea/**/*",
+        ".template.config/**/*",
+        "bin/**/*",
+        "obj/**/*"
+      ]
+    }
+  ]
+}

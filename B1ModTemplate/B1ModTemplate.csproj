@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
+        <Nullable>enable</Nullable>
+        <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>true</ImplicitUsings>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <GameFolder Condition="Exists('$(B1_DIRECTORY)')">$(B1_DIRECTORY)</GameFolder>
+        <GameFolder Condition="!Exists('$(B1_DIRECTORY)')">F:\SteamLibrary\steamapps\common\BlackMythWukong</GameFolder>
+        <ModFolder>$(GameFolder)\b1\Binaries\Win64\CSharpLoader\Mods\$(AssemblyName)</ModFolder>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="BtlSvr.Main">
+            <HintPath>..\GameDll\BtlSvr.Main.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="b1.Native">
+            <HintPath>..\GameDll\b1.Native.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="b1.NativePlugins">
+            <HintPath>..\GameDll\b1.NativePlugins.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="GSE.Core">
+            <HintPath>..\GameDll\GSE.Core.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="GSE.ProtobufDB">
+            <HintPath>..\GameDll\GSE.ProtobufDB.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Google.Protobuf">
+            <HintPath>..\GameDll\Google.Protobuf.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Protobuf.RunTime">
+            <HintPath>..\GameDll\Protobuf.RunTime.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="UnrealEngine.Runtime">
+            <HintPath>..\GameDll\UnrealEngine.Runtime.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="UnrealEngine">
+            <HintPath>..\GameDll\UnrealEngine.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="B1CSharpLoader.ModBase" Version="0.1.1" />
+    </ItemGroup>
+
+    <Target Name="CopyToModsFolder" AfterTargets="Build" Condition="Exists('$(GameFolder)')">
+        <MakeDir Directories="$(ModFolder)" Condition="!Exists('$(ModFolder)')"/>
+        <Copy SourceFiles="$(OutputPath)\$(AssemblyName).dll" DestinationFolder="$(ModFolder)"/>
+        <Message Text="Copied DLL -&gt; $(ModFolder)\$(AssemblyName).dll" Importance="High"/>
+    </Target>
+
+    <Target Name="WarnInvalidGameFolder" AfterTargets="Build" Condition="!Exists('$(GameFolder)')">
+        <Message Text="Warning: GameFolder is not valid, the folder does not exist on the computer" Importance="High"/>
+    </Target>
+
+</Project>

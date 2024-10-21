@@ -14,6 +14,7 @@ Template for making Black Myth Wukong C# Mods
 
 > [!NOTE]
 > Currently due to some limitations on B1CSharpModLoader side, modders needs to download the `GameDll` folder and reference the dlls by themselves.
+>
 > Therefore, this template is not ready to publish to Nuget, now it's GitHub release only, which means you need to manually download the .nupkg file from [here](https://github.com/BlackMythWukongMods/B1.Mod.Template/releases/latest) and install it.
 
 * If you are using .Net SDK 6, run

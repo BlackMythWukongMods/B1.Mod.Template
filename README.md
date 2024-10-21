@@ -12,7 +12,8 @@ Template for making Black Myth Wukong C# Mods
 
 ## Getting Started
 
-> [!NOTE] Currently due to some limitations on B1CSharpModLoader side, modders needs to download the `GameDll` folder and reference the dlls by themselves.
+> [!NOTE]
+> Currently due to some limitations on B1CSharpModLoader side, modders needs to download the `GameDll` folder and reference the dlls by themselves.
 > Therefore, this template is not ready to publish to Nuget, now it's GitHub release only, which means you need to manually download the .nupkg file from [here](https://github.com/BlackMythWukongMods/B1.Mod.Template/releases/latest) and install it.
 
 * If you are using .Net SDK 6, run
@@ -30,12 +31,18 @@ dotnet new install B1.Mod.Template.{version}.nupkg
 This will install the template on your computer.
 
 ### Current Limitations and Problem-Solving
-B1.Mod.Template first check if your computer sets the environment variable named `B1_DIRECTORY`, if the environment variable exists, it will use the value as the game folder to automatically copy the generated dll after build into Mods folder.
-However, if no environment variable is found, modders need to set the path manually inside .csproj file, the line `<GameFolder Condition="!Exists('$(B1_DIRECTORY)')">F:\SteamLibrary\steamapps\common\BlackMythWukong</GameFolder>`. Change the value inside into your own installation path.
+
+B1.Mod.Template first check if your computer sets the environment variable named
+`B1_DIRECTORY`, if the environment variable exists, it will use the value as the game folder to automatically copy the generated dll after build into Mods folder.
+
+However, if no environment variable is found, modders need to set the path manually inside .csproj file, the line
+`<GameFolder Condition="!Exists('$(B1_DIRECTORY)')">F:\SteamLibrary\steamapps\common\BlackMythWukong</GameFolder>`. Change the value inside into your own installation path.
 
 Also, you might have many errors states that referenced dlls cannot be found. This is because as previously noted, ModLoader doesn't provide generating GameDlls functions right now.
+
 If you don't want to change the path, simply download GameDll folder from [B1CSharpLoader](https://github.com/czastack/B1CSharpLoader) and put it inside previous level folder.
-You may also consider changing the referenced dll path by editing .csproj file.
+
+*You may also consider changing the referenced dll path directly by editing .csproj file.*
 
 ## Build From Source
 

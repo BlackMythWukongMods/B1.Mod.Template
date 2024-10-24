@@ -14,7 +14,7 @@
 
 > [!NOTE]
 > 目前因为B1CSharpLoader方面的一些限制，Mod 作者需要下载 `GameDll` 文件夹并且自己引用dll
-> 
+>
 > 因此，这个模板还没准备好发布到 Nuget 上，目前只有 GitHub 的 release，所以你需要手动从[这里](https://github.com/BlackMythWukongMods/B1.Mod.Template/releases/latest)下载 .nupkg文件然后安装模板
 
 * 如果你在使用 .Net SDK 6, 使用以下命令：

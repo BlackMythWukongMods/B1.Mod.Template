@@ -7,7 +7,7 @@ Template for making Black Myth Wukong C# Mods
 ## Pre-requisites
 
 * [Black Myth Wukong](https://store.steampowered.com/app/2358720/Black_Myth_Wukong/) with [B1CSharpModLoader](https://github.com/czastack/B1CSharpLoader)
-* [.Net SDK 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+* [.Net SDK 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 * Any C# IDE ([Visual Studio](https://visualstudio.microsoft.com), [Rider](https://www.jetbrains.com/rider), etc.)
 
 ## Getting Started
@@ -17,13 +17,7 @@ Template for making Black Myth Wukong C# Mods
 >
 > Therefore, this template is not ready to publish to Nuget, now it's GitHub release only, which means you need to manually download the .nupkg file from [here](https://github.com/BlackMythWukongMods/B1.Mod.Template/releases/latest) and install it.
 
-* If you are using .Net SDK 6, run
-
-```shell
-dotnet new --install B1.Mod.Template.{version}.nupkg
-````
-
-* If you are using of .Net SDK 7 or higher, run
+* run the following command to install the template:
 
 ```shell
 dotnet new install B1.Mod.Template.{version}.nupkg

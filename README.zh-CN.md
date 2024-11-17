@@ -7,7 +7,7 @@
 ## 前提条件
 
 * 已下载 [黑神话悟空](https://store.steampowered.com/app/2358720/Black_Myth_Wukong/) 以及 [B1CSharpModLoader](https://github.com/czastack/B1CSharpLoader)
-* [.Net SDK 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+* [.Net SDK 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 * C# IDE，比如 [Visual Studio](https://visualstudio.microsoft.com), [Rider](https://www.jetbrains.com/rider) 等
 
 ## 使用方法
@@ -17,13 +17,7 @@
 >
 > 因此，这个模板还没准备好发布到 Nuget 上，目前只有 GitHub 的 release，所以你需要手动从[这里](https://github.com/BlackMythWukongMods/B1.Mod.Template/releases/latest)下载 .nupkg文件然后安装模板
 
-* 如果你在使用 .Net SDK 6, 使用以下命令：
-
-```shell
-dotnet new --install B1.Mod.Template.{version}.nupkg
-````
-
-* 如果你在使用 .Net SDK 7 或者更高, 使用以下命令：
+* 使用以下命令来安装模板：
 
 ```shell
 dotnet new install B1.Mod.Template.{version}.nupkg
